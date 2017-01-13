@@ -17,18 +17,26 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,$httpProvider) {
+   
+   // $httpProvider.defaults.headers.common['Authorization'] = 'test';
+
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/contacts.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'main'
       })
+      .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'main'
+      })      
       .otherwise({
         redirectTo: '/'
       });

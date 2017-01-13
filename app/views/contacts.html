@@ -1,5 +1,13 @@
-        <div  class="main-container">    <!-- START: Main Container -->
-            
+    <!-- START: Main Container -->
+<style>
+.mail-subject{
+    margin-top:1%;
+}
+</style>      
+
+
+
+
             <div class="content-wrap">  <!--START: Content Wrap-->
                 
                 <div class="row">
@@ -16,36 +24,37 @@
                                     
                                     <div class="mails-wrapper"> <!-- Start: Mail List -->
                                         
-                                        <ul class="list-mail-item">
+                                        <ul class="list-mail-item" ng-repeat="contact in contacts">
                                             
-                                            <li class="mail-item un-read">
+                                            <li class="mail-item un-read col-md-12">
                                                 
 
                                                 
                                                 <div class="star-container"></div>
                                                 
-                                                <div class="mail-from">
+                                                <div class="mail-from col-md-2">
                                                     <img class="hidden-xs" src="demo/users/img-user-02.jpg" alt="">
-                                                    Cynthianawen
+                                                      {{contact.civilite}} {{contact.nom}} {{contact.prenom}}
                                                 </div>
                                                 
-                                                <div class="mail-subject">
-                                                    <span class="subject"><a href="msg-mail-view.php">Lorem ipsum dolor noretek imit set.</a></span>
+                                                <div class="mail-subject col-md-2">
+                                                    <span class="subject"><a href="#">{{contact.email}}</a></span>
                                                 </div>
 
-                                                
-                                                <div class="time-container">
-                                                 <div class="btn-group">
-                                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" aria-expanded="false"> <span class="fs-menu-3"></span></button>
-                                                <ul class="dropdown-menu   pull-right	">
-                                                    <li><a href="#">Mark as read</a></li>
-                                                    <li><a href="#">Mark as unread</a></li>
-                                                    <li><a href="#">Mark as important</a></li>
-                                                    <li><a href="#">Mark as not important</a></li>
-                                                    <li><a href="#">Add to star</a></li>
-                                                </ul>
-                                            </div>
+                                             <div class="mail-subject col-md-2" >
+                                                    <span class="subject"><a href="#">{{contact.date_de_naissance}}</a></span>
                                                 </div>
+
+                                             <div class="mail-subject col-md-3" >
+                                                    <span class="subject"><a href="#">{{contact.adresse}}.</a></span>
+                                                </div>
+       
+                                                <div class="time-container" >
+                                                <label ng-show="contact.user_id!='null'"" class="label label-success">
+                                                        <a href="#" >Membre</a></label>
+                                               
+                                                </div>                                         
+    
                                                 
                                             </li>
                                             
@@ -57,11 +66,11 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary btn-circle btn-xl"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
+                    <button type="button"  class="btn btn-primary btn-circle btn-xl"><i class="fa fa-user-plus" aria-hidden="true"></i></button>
+
 
                 </div>
                     
                 
             </div>  <!--END: Content Wrap-->
             
-        </div>  <!-- END: Main Container -->

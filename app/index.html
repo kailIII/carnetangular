@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="utf-8">
-    <title>Inbox | Big Ben Admin</title>
+    <title>Carnet D'Adresses</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="Prakasam Mathaiyan">
     <meta name="description" content="">
@@ -19,7 +19,17 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style-default.css">
-     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/plugins/animate-it/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/cmp-bs-checkbox.css">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/lib/page-login.css">
+
+
+
+
 
     <style>
 
@@ -37,11 +47,11 @@
     </style>
 </head>
 
-<body>
+<body ng-app="carnetApp"    ng-controller="SearchCtrl">
     
     <div class="wrapper has-footer">
         
-        <header class="header-top navbar fixed-top" >
+        <header class="header-top navbar fixed-top">
             
             <div class="top-bar">   <!-- START: Responsive Search -->
                 <div class="container">
@@ -95,19 +105,44 @@
 
                 </ul>
                 
+
+
+
                 <ul class="nav navbar-nav navbar-right">
-                    
+                 
+
+
                     <li class="main-search hidden-xs">
                         <div class="input-wrap">
-                            <input class="form-control" style="width:300px" type="text" placeholder="Rechercher">
-                            <a href="page-search.html"><i class="sli-magnifier"></i></a>
+
+                            <input class="form-control" style="width:300px" type="text" ng-change="myFunc()" ng-model="myValue" placeholder="Rechercher">
+
+
+                            <a href="#" ><i class="sli-magnifier"></i>
+                            </a>
+
+                            <ul class="list-group" >
+
+                               
+                                <li   style="height:45px" ng-repeat="user in users" class="list-group-item">
+                                    <a href="#"  ng-click="toshow(user)"  data-toggle="modal" data-target="#myModal" >
+                                {{user.prenom}} {{user.nom}} </a></li>
+
+
+
+                            </ul>
+
+
                         </div>
                     </li>
                     
+
+
+
                     <li class="user-profile dropdown">
                         <a href="javascript:;" class="clearfix dropdown-toggle" data-toggle="dropdown">
                             <img src="demo/users/img-user-01.jpg" alt="" class="hidden-sm">
-                            <div class="user-name">Maria Fällström <small class="fa fa-angle-down"></small></div>
+                            <div class="user-name">Mohamed <small class="fa fa-angle-down"></small></div>
                         </a>
                         <ul class="dropdown-menu dropdown-animated pop-effect" role="menu">
                             <li><a href="user-profile.html"><i class="sli-user"></i> My Profile</a></li>
@@ -136,10 +171,42 @@
             
         </aside>    <!-- END: Side Navigation -->
         
+<!-- Content here -->
 
+        <div  class="main-container" >
+        <div ng-view></div>
+
+        </div>
         
         <footer class="footer"> <!-- START: Footer -->
-           
+               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" ng-model="usertoshow" >{{usertoshow.nom | uppercase }} {{usertoshow.prenom | uppercase}} </h4>
+<br>
+                    <div>
+                        <ul>
+                        <li>   <b>Civilité  :</b> {{usertoshow.civilite | uppercase }}    </li> 
+                          <li><b>  Email : </b> {{usertoshow.email | uppercase }} </li>
+                          <li><b>Adresse : </b> {{usertoshow.adresse | uppercase }}   </li>
+                          <li><b>Date de Naissance </b>: {{usertoshow.date_de_naissance }}  </li>
+
+                      </ul>
+                    </div>
+
+                </div>
+                <div class="modal-body">
+                    <h3> </h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" ng-click="addContact(usertoshow)"  class="btn btn-primary">Ajouter aux contacts</button>
+                </div>
+            </div>
+        </div>
+    </div>
         </footer>   <!-- END: Footer -->
         
     </div>  <!-- END: wrapper -->
@@ -148,8 +215,10 @@
     <script type="text/javascript" src="assets/plugins/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/plugins/lib/plugins.js"></script>
+    <script type="text/javascript" src="assets/plugins/animate-it/animate-it.js"></script>
+    <script type="text/javascript" src="assets/plugins/animate-it/arrow-line.js"></script>
 
-    <script type="text/javascript" src="assets/js/app.base.js"></script>
+ <!--    <script type="text/javascript" src="assets/js/app.base.js"></script>  -->
 
         <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -167,6 +236,9 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/search.js"></script>
 
 
         <!-- endbuild -->

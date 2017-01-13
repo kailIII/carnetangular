@@ -1,38 +1,46 @@
-
         <div class="animatedParent">
             <div class="row">
-             <div class="col-md-4 col-sm-4 hidden-xs">
+                
+                <div class="col-md-4 col-sm-4 hidden-xs">
+                    
 
                 </div>
-
+                
                 <div class="col-xs-12 col-md-4 col-sm-6 col-lg-4">
                     
                     <div class="blue-line sm normal"></div>
                     
                     <div class="signup-box">
                         <div class="logo"><img src="assets/images/logo-c.png" alt="" style="height: 70px;"></div>
-                        <div class="alert alert-danger" ng-show="crederror">Identifiants erronés</div>
-                        <form ng-submit="submit()">
+                        
+                        <form>
                             
                             <div class="form-group">
-                                <input type="text" maxlength="20" ng-model="username" name="username" class="form-control" placeholder="Username">
+                                <input type="email" name="email" class="form-control" placeholder="Email"> 
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" name="User Name" class="form-control" placeholder="User Name">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                             </div>
                             
                             <div class="form-group">
-                                <input type="password" name="password" ng-model="password" class="form-control" placeholder="Password">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
-                                
                             </div>
                             
                             
-                            <button href="#" type="submit" class="btn btn-primary btn-block">Se Connecter</button>
+                            <button href="#" type="submit" class="btn btn-primary btn-block">Crée un Compte</button>
+
                         </form>
+                        
+
                     </div>
                     
                     <br>
                     <div class="signup-box">
-                        <p class="signac animated flipInX">Pas de compte? <a ng-href="#!/signup">Inscrivez vous</a></p>
+                        <p class="signac animated flipInX">Vous avez un compte? <a  ng-href="#!/login">Connectez vous</a></p>
                     </div>
                     
                     <div class="blue-line lg normal"></div>

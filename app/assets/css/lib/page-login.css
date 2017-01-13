@@ -14,15 +14,7 @@
 
 
 
-body{
-    background-color: #F1F4F7;
-    color: #7f888f;
-    font-family: 'Lato', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-top: 117px;
-    overflow-x: hidden;
-}
+
 
 .logo {
     text-align:center;
