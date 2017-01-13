@@ -19,7 +19,7 @@ Running `grunt test` will run the unit tests with karma.
 
 ![Alt text](/readme/search.PNG.PNG?raw=true "Optional Title")
 
-![Alt text](/readme/showcontact.PNG?raw=true "Optional Title")
+![Alt text](/readme/showcontact.PNG.PNG?raw=true "Optional Title")
 
-![Alt text](/readme/restaurants.PNG?raw=true "Optional Title")
+
 
