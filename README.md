@@ -10,3 +10,16 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+
+![Alt text](/readme/login.png?raw=true "Optional Title")
+
+
+![Alt text](/readme/showcontacts.PNG?raw=true "Optional Title")
+
+![Alt text](/readme/search.PNG.PNG?raw=true "Optional Title")
+
+![Alt text](/readme/showcontact.PNG?raw=true "Optional Title")
+
+![Alt text](/readme/restaurants.PNG?raw=true "Optional Title")
+
